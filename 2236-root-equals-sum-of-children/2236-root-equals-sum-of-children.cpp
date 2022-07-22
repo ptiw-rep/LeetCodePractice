@@ -15,8 +15,11 @@ public:
     int csum(TreeNode* root,bool &flag) {
         if( root==NULL )
             return 0;
+        // go for left subtree and right subtree
         int l = csum(root->left,flag);
         int r = csum(root->right,flag);
+        // we have to make sure that we dont check it for leaf nodes ( as it will return 0,0 )
+        // and leaf nodes are always following csum property 
         if( (root->left || root->right) && (l+r!= root->val) )
             flag = false;
         return root->val;
