@@ -32,7 +32,7 @@ public:
         while(!q.empty()) {
             Node * curr = q.front();
             q.pop();
-            for( auto nxt : curr->neighbors) {
+            for( Node* nxt : curr->neighbors) {
                 if( mp.find(nxt)==mp.end() ) {
                     mp[nxt] = new Node(nxt->val);
                     q.push(nxt);
