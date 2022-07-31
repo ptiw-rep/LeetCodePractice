@@ -13,10 +13,12 @@ public:
     vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
         int m=image.size(), n=image[0].size();
         int srcCol = image[sr][sc];
+        // Corner Case
         if( srcCol == color )
             return image;
         queue<pair<int,int>> q;
         q.push({sr,sc});
+        // BFS
         while( !q.empty() ) {
             int x = q.front().first, y = q.front().second;
             q.pop();
